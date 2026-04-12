@@ -19,6 +19,11 @@ public class Metric {
         this.rawValue = minRange;
     }
 
+    public Metric(String name, int coefficient, String direction, double minRange, double maxRange, String unit, double rawValue) {
+        this(name, coefficient, direction, minRange, maxRange, unit);
+        this.rawValue = rawValue;
+    }
+
     public double calculateScore() {
         double score;
         if (direction.contains("Higher")) {
@@ -33,6 +38,11 @@ public class Metric {
     public String getName() { return name; }
     public int getCoefficient() { return coefficient; }
     public String getDirection() { return direction; }
+
+    public String getFormattedDirection() {
+        return direction.equals("Higher") ? "Higher \u2191" : "Lower \u2193";
+    }
+
     public double getMinRange() { return minRange; }
     public double getMaxRange() { return maxRange; }
     public String getUnit() { return unit; }

@@ -37,7 +37,7 @@ public class PlanPanel extends AbstractStepPanel {
                             dimStr,
                             m.getName(),
                             m.getCoefficient(),
-                            m.getDirection(),
+                            m.getFormattedDirection(),
                             m.getMinRange() + "-" + m.getMaxRange(),
                             m.getUnit()
                     });

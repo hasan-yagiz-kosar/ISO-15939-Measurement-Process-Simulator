@@ -34,14 +34,19 @@ public class CollectPanel extends AbstractStepPanel {
                 try {
                     double val = Double.parseDouble(tableModel.getValueAt(row, 3).toString());
                     Metric m = activeMetrics.get(row);
-                    if(val >= m.getMinRange() && val <= m.getMaxRange()) {
+                    if (val >= m.getMinRange() && val <= m.getMaxRange()) {
                         m.setRawValue(val);
-                        tableModel.setValueAt(m.calculateScore(), row, 4);
+                        tableModel.setValueAt(String.format("%.1f", m.calculateScore()), row, 4);
                     } else {
-                        JOptionPane.showMessageDialog(this, "Value out of range!");
+                        JOptionPane.showMessageDialog(this,
+                                String.format("Valid range for '%s': %.0f – %.0f. Please enter a value within this range.",
+                                        m.getName(), m.getMinRange(), m.getMaxRange()),
+                                "Invalid Value", JOptionPane.WARNING_MESSAGE);
                     }
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(this, "Invalid number!");
+                    JOptionPane.showMessageDialog(this,
+                            "Please enter a valid numeric value.",
+                            "Invalid Input", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -60,11 +65,11 @@ public class CollectPanel extends AbstractStepPanel {
                     activeMetrics.add(m);
                     tableModel.addRow(new Object[]{
                             m.getName(),
-                            m.getDirection(),
+                            m.getFormattedDirection(),
                             m.getMinRange() + "-" + m.getMaxRange(),
                             m.getRawValue(),
-                            m.calculateScore(),
-                            m.getCoefficient() + "/" + m.getUnit()
+                            String.format("%.1f", m.calculateScore()),
+                            m.getCoefficient() + " / " + m.getUnit()
                     });
                 }
             }

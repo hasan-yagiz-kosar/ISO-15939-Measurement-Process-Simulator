@@ -30,9 +30,6 @@ public class WizardController {
                 currentStepIndex++;
                 view.showPanel(steps[currentStepIndex]);
                 view.updateStepIndicator(currentStepIndex);
-                if(currentStepIndex == 4) {
-                    calculateFinalResults();
-                }
             }
         }
     }

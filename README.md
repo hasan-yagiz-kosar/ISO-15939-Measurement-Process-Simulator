@@ -1,5 +1,7 @@
 # ISO/IEC 15939 Measurement Process Simulator
 
+![ISO 15939 Simulator](<Ekran görüntüsü 2026-04-12 174244.png>)
+
 This project is a desktop application developed using Java Swing that simulates the 5 core steps of the ISO/IEC 15939 software measurement process standard. It was prepared as an individual assignment for the Software Project II course.
 
 ## 👨‍🎓 Student Information
@@ -20,6 +22,13 @@ The system is designed strictly adhering to the Model-View-Controller (MVC) arch
 * Developed using only standard Java SE (17+) libraries. No external library dependencies are used.
 * The graphical user interface (GUI) is built with Java Swing, primarily utilizing `CardLayout` for the wizard navigation.
 * Data management and storage are handled via the Java Collections Framework (`ArrayList`, `HashMap`).
+
+## 🚀 How to Run
+To compile and run the application from the terminal, use the following commands:
+
+1. Navigate to the source folder.
+2. Compile: `javac *.java`
+3. Run: `java MainClassName`
 
 ## 📐 System Design (UML Class Diagram)
 

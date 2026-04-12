@@ -81,9 +81,16 @@ public class AnalysePanel extends AbstractStepPanel {
             else if (lowestScore >= 2.0) level = "Needs Improvement";
             else level = "Poor";
 
-            String adviceText = (lowestScore == 5.0) ?
-                    "<i>Perfect score! No improvement needed.</i>" :
-                    "<i>This dimension has the lowest score and requires the most improvement.</i>";
+            String adviceText;
+            if (lowestScore >= 4.0) {
+                adviceText = "<i>All dimensions are performing excellently. Keep up the great work!</i>";
+            } else if (lowestScore >= 3.0) {
+                adviceText = "<i>This dimension has the low score but is performing good overall.</i>";
+            } else if (lowestScore >= 2.0) {
+                adviceText = "<i>This dimension has the very low score and needs improvement.</i>";
+            } else {
+                adviceText = "<i>This dimension has the poor score and requires the most improvement.</i>";
+            }
 
             lblGapAnalysis.setText("<html>Gap Analysis: <br>Dimension: <b>" + lowestDim.getName() +
                     "</b><br>Score: " + String.format("%.2f", lowestScore) +
