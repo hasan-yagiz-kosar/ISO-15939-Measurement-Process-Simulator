@@ -22,7 +22,6 @@ The system is designed strictly adhering to the Model-View-Controller (MVC) arch
 * Data management and storage are handled via the Java Collections Framework (`ArrayList`, `HashMap`).
 
 ## 📐 System Design (UML Class Diagram)
-The application strictly follows the MVC pattern. Below is the class diagram showing the relationships between the Model, View, and Controller layers:
 
 ```mermaid
 classDiagram
