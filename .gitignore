@@ -1,0 +1,31 @@
+# Compiled output
+bin/
+out/
+target/
+build/
+*.class
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Java / JVM
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
