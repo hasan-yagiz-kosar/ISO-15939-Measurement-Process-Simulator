@@ -26,9 +26,18 @@ The system is designed strictly adhering to the Model-View-Controller (MVC) arch
 ## 🚀 How to Run
 To compile and run the application from the terminal, use the following commands:
 
-1. Navigate to the source folder.
-2. Compile: `javac *.java`
-3. Run: `java MainClassName`
+1. Navigate to the `src` folder where the `.java` source files are located:
+   ```
+   cd src
+   ```
+2. Compile all Java source files:
+   ```
+   javac *.java
+   ```
+3. Run the application:
+   ```
+   java Main
+   ```
 
 ## 📐 System Design (UML Class Diagram)
 
